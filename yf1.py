@@ -1,5 +1,5 @@
 import yfinance as yf
-
+#yahoo finance function test
 msft = yf.Ticker("MSFT")
 print(msft)
 print(msft.info)
