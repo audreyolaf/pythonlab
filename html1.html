@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Taylor Swift</title>
+        <style>
+        .top-container {
+            text-align:center;
+        }
+        .header {
+            font-family:"honilad demo";
+            font-size:25px;
+            background-color:rgb(255, 122, 255);
+            text-align:center;
+        }
+        h2 {
+            padding: 10px;
+            font-family:"Kristen ITC";
+            color:rgb(154, 90, 250);
+        }
+        h3 {
+            font-family:"Trebuchet MS";
+            text-decoration:underline;
+        }
+        ul {
+            font-family:"Trebuchet MS";
+        }
+        p {
+            font-family:"Trebuchet MS";
+        }
+        body {
+            background-color:rgb(255, 163, 163);
+        }
+        .content {
+            padding: 16px;
+        }
+        
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        
+        .sticky + .content {
+            padding-top: 102px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="top-container">
+            <h1>Taylor Swift</h1>
+        </div>
+        <div class="header">
+            <h1>Taylor Swift</h1>
+        </div>
+
+        <div class="content">
+            <h2>Contents</h2>
+        <ul>
+            <li><a href="#sec-one">Section 1</a></li>
+            <li><a href="#sec-two">Section 2</a></li>
+            <li><a href="#sec-thr">Section 3</a></li>
+            <li><a href="#sec-fou">Section 4</a></li>
+        </ul>
+        
+        <h2>Section 1</h2>
+        <h3>Basic Info</h3>
+        
+        <p id="sec-one">
+        </p>
+        
+        <h2>Section 2</h2>
+        <h3>Early Dreams</h3>
+        
+        <p id="sec-two">
+        </p>
+        
+        <h2>Section 3</h2>
+        <h3>Country Superstar</h3>
+        
+        <p id="sec-two">
+        </p>
+        
+        <h2>Section 4</h2>
+        <h3>Rise to Fame</h3>
+        
+        <p id="sec-two">
+        </p>
+        </div>
+        
+        <script>
+            window.onscroll = function() {myFunction()};
+            
+            var header = document.getElementById("myHeader");
+            var sticky = header.offsetTop;
+            
+            function myFunction() {
+              if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+              } else {
+                header.classList.remove("sticky");
+              }
+            }
+        </script>
+    </body>
+</html>
