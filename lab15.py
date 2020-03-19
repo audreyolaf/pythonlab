@@ -9,6 +9,7 @@ def truncate(n, decimals=0):
 
 def mean():
     mean = statistics.mean(num_list)
+    mean = round(mean, 2)
     print("Average: " + str(mean))
 
 def median():
@@ -16,16 +17,21 @@ def median():
     med = statistics.median(num_list)
     tn = num_of_num % 2
     if tn == 1:
-        print(med)
+        print("Median: " + str(med))
     else:
         med_down = int(truncate(med))
         med_up = math.ceil(med)
-        print("Median: " + str(med_down) + ", " + str(med_up))                
+        if med_up != med_down:
+            print("Median: " + str(med_down) + ", " + str(med_up))
+        else:
+            print("Median: " + str(med))                   
     
 def mode():
-    mode = statistics.mode(num_list)
-    print("Mode: " + str(mode))
-   
+    try:
+            mode = statistics.mode(num_list)
+            print("Mode: " + str(mode))
+    except statistics.StatisticsError:
+            print("There is no unique mode.")   
 while True:
     num_of_num = int(input("How many numbers: "))
     for i in range(num_of_num):
@@ -41,13 +47,7 @@ while True:
         elif m == "Mode":    
             mode()
         elif m == "Exit":
+            num_list.clear()
             break
         else:
             exit()        
-"""
-    try:
-        mode = statistics.mode(num_list)
-        print("Mode: " + str(mode))
-    except statistics.StatisticsError:
-        print("There is no unique mode.")
-        """
