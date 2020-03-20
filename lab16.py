@@ -12,7 +12,7 @@ while True:
         counter += 1
     elif user_num == r:
         print("Congrats! You guessed the correct number in " + str(counter) + " guesses.") 
-        user_q = input("Do you want to play again?(Y/N): " + "\n")
+        user_q = input("Do you want to play again?(Y/N): ")
         user_q = user_q.capitalize()
         if user_q == "Y":
             r = random.randint(1, 101)
