@@ -1,24 +1,27 @@
 #bubble sort
 import random
+import time
 num_list = []
 def GenerateData(num):
     for i in range(num):
         ran = random.randint(0, num)
         num_list.append(ran)
-    print(num_list) 
+    print("Original: ", num_list) 
     
     return num_list  
-GenerateData(7)    
+GenerateData(10)    
 
 def BubbleSort(nums): 
     numnum = len(nums)
-    for i in range(numnum):
-        for j in range(0, numnum-i-1):
-            if nums[j+1] < nums[j]:     
-                nums[j], nums[j+1] = nums[j+1], nums[j] 
+    start = time.time()
+    for x in range(numnum):
+        for y in range(0, numnum-x-1):
+            if nums[y+1] < nums[y]:     
+                nums[y], nums[y+1] = nums[y+1], nums[y] #swap
+            print(nums)    
+    end = time.time()
+    print("Elasped time = " + str(end-start) + " seconds.")
 
 nums = num_list
 BubbleSort(nums)
-print(nums)
-
-                
+print("Sorted: ", nums)         
