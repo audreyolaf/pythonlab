@@ -2,7 +2,15 @@
 num_list = []
 import statistics
 import math
-
+import random
+def GenerateData(num):
+    em_list = []
+    for i in range(num):
+        ran = random.randint(0, num * 10)
+        em_list.append(ran)
+    print(em_list)  
+    return em_list  
+#GenerateData(1000)    
 def truncate(n, decimals=0):
     multiplier = 10 ** decimals
     return int(n * multiplier) / multiplier
@@ -34,9 +42,12 @@ def mode():
             print("There is no unique mode.")   
 while True:
     num_of_num = int(input("How many numbers: "))
+    """
     for i in range(num_of_num):
         num = int(input("Enter a number: "))
         num_list.append(num) 
+    """
+    num_list = GenerateData(num_of_num)
     while True:    
         m = input("Mean, median, mode, or exit: ")
         m = m.capitalize()
