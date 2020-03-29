@@ -9,7 +9,7 @@ def GenerateData(num):
     print("Original: ", num_list) 
     
     return num_list  
-GenerateData(10)    
+GenerateData(1000)    
 
 def BubbleSort(nums): 
     numnum = len(nums)
@@ -18,9 +18,10 @@ def BubbleSort(nums):
         for y in range(0, numnum-x-1):
             if nums[y+1] < nums[y]:     
                 nums[y], nums[y+1] = nums[y+1], nums[y] #swap
-            print(nums)    
+            #print(nums)    
     end = time.time()
     print("Elasped time = " + str(end-start) + " seconds.")
+
 
 nums = num_list
 BubbleSort(nums)
