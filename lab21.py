@@ -28,11 +28,20 @@ def QuickSort(arr, lower, higher):
         QuickSort(arr, lower, di-1) 
         QuickSort(arr, di+1, higher) 
 
-  
+def PythonSort(nums):
+    start = time.time()
+    sorted_num = sorted(nums)
+    end = time.time()
+    print("Elasped time of python sort = " + str(end-start) + " seconds.")
+    return sorted_num
+
 arr = num_list
 n = len(arr) 
 start = time.time()
 QuickSort(arr, 0, n-1)
 end = time.time()
-print("Sorted: ", arr)
+print("Sorted: ")
+for i in range(n): 
+    print ("%d" %arr[i]), 
 print("Elasped time = " + str(end-start) + " seconds.")
+PythonSort(arr)
